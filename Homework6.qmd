@@ -18,10 +18,11 @@ library(schrute)
 data("theoffice")
 ```
 
+Jerry: Test if I can add comments and update them onto the github.
+
 # The Office
 
 Let's continue to work with *The Office* text from the [schrute](https://cran.r-project.org/web/packages/schrute/index.html) package.
-
 
 # Sentiment Analysis
 
@@ -49,7 +50,6 @@ theoffice_words <- theoffice_textdf |>
   unnest_tokens(word, text) #tokenize
 ```
 
-
 ```{r}
 theoffice_words |> 
   #Joining sentiments from tidytext with the words in the office dataset
@@ -67,7 +67,6 @@ theoffice_words |>
        title = "Sentiment Score of The Office Episodes Over Time") +
   theme_minimal()
 ```
-
 
 ### By Rating
 
@@ -90,6 +89,7 @@ theoffice_words |>
   theme_minimal() +
   geom_smooth(method = "lm", se = FALSE, color = "blue") #Adding a linear model fit
 ```
+
 The linear relationship is positive but not very strong. The points are widely scattered around it, and there seems to be high variability in sentiment scores at every IMBD rating level. However, we can say that higher IMBD ratings are associated with higher sentiment scores, though we can't say that with much confidence.
 
 ### Sentiment Negation
@@ -178,4 +178,5 @@ theoffice_textdf |>
   theme_minimal() +
   geom_smooth(method = "lm", se = FALSE, color = "blue")
 ```
+
 The graphs don't seem to change much to me.
