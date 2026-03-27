@@ -18,8 +18,6 @@ library(schrute)
 data("theoffice")
 ```
 
-Jerry: Test if I can add comments and update them onto the github.
-
 # The Office
 
 Let's continue to work with *The Office* text from the [schrute](https://cran.r-project.org/web/packages/schrute/index.html) package.
@@ -37,6 +35,8 @@ theoffice0 <- theoffice |>
   #consequtive_id creates a counter everytime the combo of season and episode changes
   mutate(overall_episode = consecutive_id(season, episode))
 ```
+
+* Jerry: Could try "theoffice |> mutate(overall_episode = paste0(season, ".", episode" if you want to see which episode is from which season.
 
 ```{r}
 #Creating dataset with each line and the episode associated with that line
@@ -68,6 +68,8 @@ theoffice_words |>
   theme_minimal()
 ```
 
+* Jerry: You could also try making another sentiment score that lists only the seasons in the x-axis, while still keeping the score based on episodes per season.
+
 ### By Rating
 
 Create a scatterplot of the `imdb_rating` versus the sentiment score (positive - negative), where the case is again an episode. Decide whether a linear model is a good fit to this relationship (optional, if you have had modeling classes, what model looks best?). Comment on what you find.
@@ -91,6 +93,9 @@ theoffice_words |>
 ```
 
 The linear relationship is positive but not very strong. The points are widely scattered around it, and there seems to be high variability in sentiment scores at every IMBD rating level. However, we can say that higher IMBD ratings are associated with higher sentiment scores, though we can't say that with much confidence.
+
+* Jerry: You can try to color each observation based on season. You would have to mutate season before coloring the ggplot.
+* "theoffice |> mutate(seasonv2 = factor(season))"
 
 ### Sentiment Negation
 
